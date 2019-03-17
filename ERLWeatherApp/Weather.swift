@@ -1,11 +1,3 @@
-//
-//  Pokemon.swift
-//  PokedexApp
-//
-//  Created by Santiago Villagómez on 3/7/19.
-//  Copyright © 2019 Santiago Villagómez. All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
