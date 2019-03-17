@@ -73,9 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.weatherStatusIcon.image = imageStatus
             }
         }
-        
-       
-        
+    
         networking.getWeatherForNextDays(locValue) { weatherList
             in
             
@@ -85,12 +83,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let fourthDay: String = self.getDayLabel(3)
             let fifthDay: String = self.getDayLabel(4)
             let group = DispatchGroup()
-
-            
-             self.sortedWeatherEntries = [[],[],[],[],[]]
-            
-            
-            
+            self.sortedWeatherEntries = [[],[],[],[],[]]
+        
             for weatherEntry in weatherList {
                  group.enter()
                 self.networking.getConditionIcon(weatherEntry.condition!.statusIconId!) { imageStatus
@@ -101,15 +95,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                   
                     switch weatherEntryFormattedDate {
                     case firstDay:
+                        if self.sortedWeatherEntries[0].count >= 8 {
+                            break
+                        }
                         self.sortedWeatherEntries[0].append(weatherEntry)
                         
                     case secondDay:
+                        if self.sortedWeatherEntries[1].count >= 8 {
+                            break
+                        }
                         self.sortedWeatherEntries[1].append(weatherEntry)
                     case thirdDay:
+                        if self.sortedWeatherEntries[2].count >= 8 {
+                            break
+                        }
                         self.sortedWeatherEntries[2].append(weatherEntry)
                     case fourthDay:
+                        if self.sortedWeatherEntries[3].count >= 8 {
+                            break
+                        }
                         self.sortedWeatherEntries[3].append(weatherEntry)
                     case fifthDay:
+                        if self.sortedWeatherEntries[4].count >= 8 {
+                            break
+                        }
                         self.sortedWeatherEntries[4].append(weatherEntry)
                     default: break
                         
