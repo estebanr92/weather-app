@@ -67,6 +67,7 @@ class SearchViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                     let realm = try Realm()
                     
                     try realm.write {
+                        print("agregando")
                         realm.add(weatherRealm)
                     }
                 } catch {

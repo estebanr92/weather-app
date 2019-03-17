@@ -11,27 +11,20 @@ import RealmSwift
 
 class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var historyEntriesTableView: UITableView!
+    @IBOutlet weak var historyTableView: UITableView!
+    
     var weatherEntries:[WeatherRealm] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        do {
-            let realm = try Realm()
-            weatherEntries = Array<WeatherRealm>(realm.objects(WeatherRealm.self))
-            print(weatherEntries)
-        } catch {
-            
-        }
+        getWeatherEntries()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print("asoma")
-        historyEntriesTableView.reloadData()
-    }
+
     
     override func viewDidAppear(_ animated: Bool) {
-        historyEntriesTableView.reloadData()
+        getWeatherEntries()
+        historyTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,6 +35,15 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "historyCell") as! HistoryTableViewCell
         cell.initFromWeatherRealm(weatherEntry: weatherEntries[indexPath.row])
         return cell
+    }
+    
+    func getWeatherEntries() {
+        do {
+            let realm = try Realm()
+            weatherEntries = Array<WeatherRealm>(realm.objects(WeatherRealm.self))
+        } catch {
+            
+        }
     }
     
     

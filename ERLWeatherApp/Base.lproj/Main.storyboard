@@ -249,7 +249,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="History" id="85W-jK-N9x"/>
                     <connections>
-                        <outlet property="historyEntriesTableView" destination="vDa-4W-aRl" id="Qff-bK-pZB"/>
+                        <outlet property="historyTableView" destination="vDa-4W-aRl" id="TU4-Je-sMP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKw-rE-Ia5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -270,8 +270,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max number of days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCj-Mf-WcA">
-                                <rect key="frame" x="25" y="93" width="156" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Max number of days (1..5)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCj-Mf-WcA">
+                                <rect key="frame" x="25" y="93" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
